@@ -41,18 +41,6 @@ export const useContactsStoreStore = defineStore('contactsStore', () => {
         _contactList = _contactList.filter((el: ContactClassLocalStore) => el.id != contactId);
         await localStorage.setItem('contactsList',JSON.stringify(_contactList));
         contactsList.value = contactsList.value.filter((el: ContactClass) => el.id != contactId);
-        // contactsList.value = _contactList.map((el: ContactClassLocalStore) => { console.log(el); const new_el: ContactClass = {
-        //     id: el.id,
-        //     login: el.login,
-        //     metka: el.metka?.map(el => el.text)?.reduce((_pr: string = '', _cur: string) => { 
-        //         if (_pr == '') return _pr + _cur
-        //         return _pr + '; '+ _cur; }) || '',
-        //     type: el.type,
-        //     password: el.password,
-        //     errors: []
-        // }; return new_el;
-        // });
-
     }
 
     const getContacts = async () => {
